@@ -1,0 +1,20 @@
+Nat.eq_dec_step
+: {a : (Nat a)} {b : (Nat b)} {p : (Either (Eq Nat a b) (Not (Eq Nat a b)) p)}
+  (Either (Eq Nat (Nat.succ a) (Nat.succ b)) (Not (Eq Nat (Nat.succ a) (Nat.succ b))) (Nat.eq_dec_step a b p))
+= [a] [b] [p]
+  let motive_either [self]
+    (Either
+      (Eq Nat (Nat.succ a) (Nat.succ b))
+      (Not (Eq Nat (Nat.succ a) (Nat.succ b)))
+      (Nat.eq_dec_step a b self))
+  let left [e : (Eq Nat a b e)]
+    (Either.left
+      (Eq Nat (Nat.succ a) (Nat.succ b))
+      (Not (Eq Nat (Nat.succ a) (Nat.succ b)))
+      (Eq.cong Nat Nat a b e Nat.succ))
+  let right [n : (Not (Eq Nat a b) n)]
+    (Either.right
+      (Eq Nat (Nat.succ a) (Nat.succ b))
+      (Not (Eq Nat (Nat.succ a) (Nat.succ b)))
+      (Nat.succ_inj_r a b n))
+    (p -motive_either left right)

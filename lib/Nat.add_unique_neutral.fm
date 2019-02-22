@@ -1,0 +1,8 @@
+Nat.add_unique_neutral
+: {a : (Nat a)} {b : (Nat b)} {e : (Eq Nat (Nat.add a b) a e)} (Eq Nat b Nat.zero (Nat.add_unique_neutral a b e))
+= [a]
+  let motive [self : (Nat self)]
+    {b : (Nat b)} {e : (Eq Nat (Nat.add self b) self e)} (Eq Nat b Nat.zero (Nat.add_unique_neutral self b e))
+  let case_zero [b] [e] e
+  let case_succ [a] [b] [e] (Nat.add_unique_neutral a b (Nat.succ_inj (Nat.add a b) a e))
+  (a -motive case_succ case_zero)

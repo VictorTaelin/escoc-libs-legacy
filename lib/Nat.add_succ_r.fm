@@ -1,0 +1,9 @@
+Nat.add_succ_r
+: {a : (Nat a)} {b : (Nat b)} (Eq Nat (Nat.add a (Nat.succ b)) (Nat.succ (Nat.add a b)) (Nat.add_succ_r a b))
+= [a] [b]
+  let motive [self]
+    (Eq Nat (Nat.add self (Nat.succ b)) (Nat.succ (Nat.add self b)) (Nat.add_succ_r self b))
+  let case_succ [pred]
+    (Eq.cong Nat Nat (Nat.add pred (Nat.succ b)) (Nat.succ (Nat.add pred b)) (Nat.add_succ_r pred b) Nat.succ)
+  let case_zero (Eq.refl Nat (Nat.succ b))
+  (a -motive case_succ case_zero)

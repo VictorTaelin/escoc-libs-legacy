@@ -1,0 +1,5 @@
+Nat.mul_assoc_r
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)}
+  (Eq Nat (Nat.mul a (Nat.mul b c)) (Nat.mul (Nat.mul a b) c) (Nat.mul_assoc_r a b c))
+= [a] [b] [c]
+  (Eq.sym Nat (Nat.mul (Nat.mul a b) c) (Nat.mul a (Nat.mul b c)) (Nat.mul_assoc a b c))

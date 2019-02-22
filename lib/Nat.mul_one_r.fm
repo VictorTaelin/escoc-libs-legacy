@@ -1,0 +1,10 @@
+Nat.mul_one_r
+: {a : (Nat a)} (Eq Nat (Nat.mul a (Nat.succ Nat.zero)) a (Nat.mul_one_r a))
+= [a]
+  let motive [self]
+    (Eq Nat (Nat.mul self (Nat.succ Nat.zero)) self (Nat.mul_a_one self))
+  let case_succ [a]
+    (Eq.cong Nat Nat (Nat.mul a (Nat.succ Nat.zero)) a (Nat.mul_one_r a) Nat.succ)
+  let case_zero
+    (Eq.refl Nat Nat.zero)
+  (a -motive case_succ case_zero)

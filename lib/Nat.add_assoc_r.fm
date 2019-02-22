@@ -1,0 +1,4 @@
+Nat.add_assoc_r
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)} (Eq Nat (Nat.add a (Nat.add b c)) (Nat.add (Nat.add a b) c) (Nat.add_assoc_r a b c))
+= [a] [b] [c]
+  (Eq.sym Nat (Nat.add (Nat.add a b) c) (Nat.add a (Nat.add b c)) (Nat.add_assoc a b c))

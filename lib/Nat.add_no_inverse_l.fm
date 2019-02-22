@@ -1,0 +1,3 @@
+Nat.add_no_inverse_l
+: {a : (Nat a)} {b : (Nat b)} {e : (Eq Nat (Nat.add a b) Nat.zero e)} (Eq Nat a Nat.zero (Nat.add_no_inverse_l a b e))
+= [a] [b] [e] (Nat.add_no_inverse_r b a (Eq.trans Nat (Nat.add b a) (Nat.add a b) Nat.zero (Nat.add_comm b a) e))

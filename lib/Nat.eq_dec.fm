@@ -1,0 +1,23 @@
+Nat.eq_dec
+: {a : (Nat a)} {b : (Nat b)}
+  (Either (Eq Nat a b) (Not (Eq Nat a b)) (Nat.eq_dec a b))
+= [a] 
+  let motive [a] {b : (Nat b)}
+    (Either (Eq Nat a b) (Not (Eq Nat a b)) (Nat.eq_dec a b))
+  let case_succ [pred_a]
+    [b]
+    let motive_b [b]
+      (Either
+        (Eq Nat (Nat.succ pred_a) b)
+        (Not (Eq Nat (Nat.succ pred_a) b))
+        (Nat.eq_dec (Nat.succ pred_a) b))
+    let case_succ_b [pred_b]
+      (Nat.eq_dec_step pred_a pred_b (Nat.eq_dec pred_a pred_b))
+    let case_zero_b
+      (Either.right
+        (Eq Nat (Nat.succ pred_a) Nat.zero)
+        (Not (Eq Nat (Nat.succ pred_a) Nat.zero))
+        (Nat.succ_not_zero pred_a))
+    (b -motive_b case_succ_b case_zero_b)
+  let case_zero [b] (Nat.eq_dec_zero b)
+  (a -motive case_succ case_zero)

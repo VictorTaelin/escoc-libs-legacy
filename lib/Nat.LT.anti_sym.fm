@@ -1,0 +1,15 @@
+Nat.LT.anti_sym
+: {a : (Nat a)} {b : (Nat b)} {p1 : (Nat.LT a b p1)} {p2 : (Nat.LT b a p2)} (Eq Nat a b (Nat.LT.anti_sym a b p1 p2))
+= [a] [b] [p1] [p2]
+  let x1 (Nat.LT.fst a b p1)
+  let x2 (Nat.LT.fst b a p2)
+  let e1 (Nat.LT.snd a b p1)
+  let e2 (Nat.LT.snd b a p2)
+  let e3
+  (Nat.add_no_inverse_l x1 x2
+    (Nat.add_unique_neutral a (Nat.add x1 x2)
+      (Eq.trans Nat (Nat.add a (Nat.add x1 x2)) (Nat.add (Nat.add a x1) x2) a
+        (Nat.add_assoc_r a x1 x2)
+        (Eq.trans Nat
+          (Nat.add (Nat.add a x1) x2) (Nat.add b x2) a (Eq.cong Nat Nat (Nat.add a x1) b e1 [x : (Nat x)] (Nat.add x x2)) e2))))
+  (Eq.r_trans Nat a (Nat.add a Nat.zero) b (Nat.add_zero_r a) (Eq.subst Nat x1 Nat.zero e3 [x : (Nat x)] (Eq Nat (Nat.add a x) b) e1))

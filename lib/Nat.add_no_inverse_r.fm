@@ -1,0 +1,8 @@
+Nat.add_no_inverse_r
+: {a : (Nat a)} {b : (Nat b)} {e : (Eq Nat (Nat.add a b) Nat.zero e)} (Eq Nat b Nat.zero (Nat.add_no_inverse_r a b e))
+= [a]
+  let motive [self : (Nat self)]
+    {b : (Nat b)} {e : (Eq Nat (Nat.add self b) Nat.zero e)} (Eq Nat b Nat.zero (Nat.add_no_inverse_r self b e))
+  let case_zero [b] [e] e
+  let case_succ [a] [b] [e] (Nat.succ_not_zero (Nat.add a b) e -[self : (Empty self)] (motive (Nat.succ a)) b e)
+  (a -motive case_succ case_zero)

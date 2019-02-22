@@ -1,0 +1,13 @@
+Nat.mul_distr_l
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)}
+  (Eq Nat (Nat.mul a (Nat.add b c)) (Nat.add (Nat.mul a b) (Nat.mul a c)) (Nat.mul_distr_l a b c))
+= [a] [b] [c]
+  let mul Nat.mul
+  let add Nat.add
+  (Eq.subst Nat (mul c a) (mul a c) (Nat.mul_comm c a)
+    [x : (Nat x)] (Eq Nat (Nat.mul a (Nat.add b c)) (Nat.add (Nat.mul a b) x))
+    (Eq.subst Nat (mul b a) (mul a b) (Nat.mul_comm b a)
+      [x : (Nat x)] (Eq Nat (Nat.mul a (Nat.add b c)) (Nat.add x (Nat.mul c a)))
+      (Eq.trans Nat (mul a (add b c)) (mul (add b c) a) (add (mul b a) (mul c a))
+        (Nat.mul_comm a (add b c))
+        (Nat.mul_distr_r b c a))))

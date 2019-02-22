@@ -1,0 +1,8 @@
+Nat.add_swap
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)} (Eq Nat (Nat.add a (Nat.add b c)) (Nat.add b (Nat.add a c)) (Nat.add_swap a b c))
+= [a] [b] [c]
+  (Eq.r_trans Nat
+    (Nat.add a (Nat.add b c)) (Nat.add (Nat.add a b) c) (Nat.add b (Nat.add a c)) (Nat.add_assoc a b c)
+    (Eq.trans Nat (Nat.add (Nat.add a b) c) (Nat.add (Nat.add b a) c) (Nat.add b (Nat.add a c))
+      (Eq.cong Nat Nat (Nat.add a b) (Nat.add b a) (Nat.add_comm a b) [x : (Nat x)] (Nat.add x c))
+      (Nat.add_assoc b a c)))

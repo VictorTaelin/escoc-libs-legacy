@@ -1,0 +1,6 @@
+Nat.LT.succ_strict
+: {a : (Nat a)} {b : (Nat b)} {p : (Nat.LT (Nat.succ a) (Nat.succ b) p)} (Nat.LT a b (Nat.LT.succ_strict a b p))
+= [a] [b] [p]
+  let x (Nat.LT.fst (Nat.succ a) (Nat.succ b) p)
+  let e (Nat.LT.snd (Nat.succ a) (Nat.succ b) p)
+  (Nat.LT.cons a b x (Nat.succ_inj (Nat.add a x) b e))

@@ -1,0 +1,14 @@
+Nat.LT.dec
+: {a : (Nat a)} {b : (Nat b)}
+  (Either (Nat.LT a b) (Not (Nat.LT a b)) (Nat.LT.dec a b))
+= [a]
+  let motive [self] {b : (Nat b)}
+    (Either (Nat.LT self b) (Not (Nat.LT self b)) (Nat.LT.dec self b))
+  let case_zero [b] (Either.left (Nat.LT Nat.zero b) (Not (Nat.LT Nat.zero b)) (Nat.LT.bot1 b))
+  let case_succ [a] [b]
+    let motive_b [b]
+      (Either (Nat.LT (Nat.succ a) b) (Not (Nat.LT (Nat.succ a) b)) (Nat.LT.dec (Nat.succ a) b))
+    let case_zero_b (Either.right (Nat.LT (Nat.succ a) Nat.zero) (Not (Nat.LT (Nat.succ a) Nat.zero)) (Nat.LT.succ_not_lt_zero a))
+    let case_succ_b [b] (Nat.LT.dec_step a b (Nat.LT.dec a b))
+    (b -motive_b case_succ_b case_zero_b)
+  (a -motive case_succ case_zero)

@@ -1,0 +1,4 @@
+Nat.pred
+: {a : (Nat a)} (Nat (Nat.pred a))
+= [a]
+  (a -[self] (Nat (Nat.pred self)) [pred] pred Nat.zero)

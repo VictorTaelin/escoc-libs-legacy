@@ -1,0 +1,12 @@
+Nat.add_assoc
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)} (Eq Nat (Nat.add (Nat.add a b) c) (Nat.add a (Nat.add b c)) (Nat.add_assoc a b c))
+= [a] [b] [c]
+  let motive [self]
+    (Eq Nat (Nat.add (Nat.add self b) c) (Nat.add self (Nat.add b c)) (Nat.add_assoc self b c))
+  let case_succ [a]
+    let ab_c (Nat.add (Nat.add a b) c)
+    let a_bc (Nat.add a (Nat.add b c))
+    (Eq.cong Nat Nat ab_c a_bc (Nat.add_assoc a b c) Nat.succ)
+  let case_zero
+    (Eq.refl Nat (Nat.add b c))
+  (a -motive case_succ case_zero)

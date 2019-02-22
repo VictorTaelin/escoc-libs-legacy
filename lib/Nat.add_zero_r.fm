@@ -1,0 +1,9 @@
+Nat.add_zero_r
+: {a : (Nat a)} (Eq Nat (Nat.add a Nat.zero) a (Nat.add_zero_r a))
+= [a]
+  let motive [self]
+    (Eq Nat (Nat.add self Nat.zero) self (Nat.add_zero_r self))
+  let case_succ [pred]
+    (Eq.cong Nat Nat (Nat.add pred Nat.zero) pred (Nat.add_zero_r pred) Nat.succ)
+  let case_zero (Eq.refl Nat Nat.zero)
+  (a -motive case_succ case_zero)

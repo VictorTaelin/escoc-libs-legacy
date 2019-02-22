@@ -1,0 +1,3 @@
+Nat.zero_not_succ
+: {a : (Nat a)} {e : (Eq Nat Nat.zero (Nat.succ a) e)} (Empty (Nat.zero_not_succ a e))
+= [a] [e] (Nat.succ_not_zero a (Eq.sym Nat Nat.zero (Nat.succ a) e))

@@ -1,0 +1,13 @@
+Nat.mul_distr_r
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)}
+  (Eq Nat (Nat.mul (Nat.add a b) c) (Nat.add (Nat.mul a c) (Nat.mul b c)) (Nat.mul_distr_r a b c))
+= [a]
+  let motive [self] {b : (Nat b)} {c : (Nat c)}
+    (Eq Nat (Nat.mul (Nat.add self b) c) (Nat.add (Nat.mul self c) (Nat.mul b c)) (Nat.mul_distr_r self b c))
+  let case_succ [a] [b] [c]
+    (Eq.subst Nat (Nat.add (Nat.mul a c) (Nat.mul b c)) (Nat.mul (Nat.add a b) c)
+      (Eq.sym Nat (Nat.mul (Nat.add a b) c) (Nat.add (Nat.mul a c) (Nat.mul b c)) (Nat.mul_distr_r a b c))
+      [x : (Nat x)] (Eq Nat (Nat.add c x) (Nat.add (Nat.add c (Nat.mul a c)) (Nat.mul b c)))
+      (Nat.add_assoc_r c (Nat.mul a c) (Nat.mul b c)))
+   let case_zero [b] [c] (Eq.refl Nat (Nat.mul b c))
+ (a -motive case_succ case_zero)

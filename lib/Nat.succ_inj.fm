@@ -1,0 +1,5 @@
+Nat.succ_inj
+: {a : (Nat a)} {b : (Nat b)} {e : (Eq Nat (Nat.succ a) (Nat.succ b) e)}
+  (Eq Nat a b (Nat.succ_inj a b e))
+= [a] [b] [e]
+  (Eq.cong Nat Nat (Nat.succ a) (Nat.succ b) e Nat.pred)

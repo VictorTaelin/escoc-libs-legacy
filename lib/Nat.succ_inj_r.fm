@@ -1,0 +1,5 @@
+Nat.succ_inj_r
+: {a : (Nat a)} {b : (Nat b)} {n : (Not (Eq Nat a b) n)}
+  (Not (Eq Nat (Nat.succ a) (Nat.succ b)) (Nat.succ_inj_r a b n))
+= [a] [b] [n] [e : (Eq Nat (Nat.succ a) (Nat.succ b) e)]
+  (n (Nat.succ_inj a b e))

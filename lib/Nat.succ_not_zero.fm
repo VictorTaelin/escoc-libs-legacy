@@ -1,0 +1,3 @@
+Nat.succ_not_zero
+: {a : (Nat a)} {e : (Eq Nat (Nat.succ a) Nat.zero e)} (Empty (Nat.succ_not_zero a e))
+= [a] [e] (Eq.subst Nat (Nat.succ a) Nat.zero e Nat.succ_not_zero_mot Unit.new)

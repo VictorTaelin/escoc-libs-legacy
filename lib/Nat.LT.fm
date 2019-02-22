@@ -1,0 +1,3 @@
+Nat.LT
+: {a : (Nat a)} {b : (Nat b)} (Typ (Nat.LT a b))
+= [a] [b] (Sigma Nat [x : (Nat x)] (Eq Nat (Nat.add a x) b))

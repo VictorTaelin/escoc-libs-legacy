@@ -1,0 +1,3 @@
+Nat.succ_not_zero_mot
+: {x : (Nat x)} {t : (Nat.succ_not_zero_mot x t)} Type
+= [x] (x -[x : (Nat x)] {t : (Nat.succ_not_zero_mot x t)} Type [self] Unit Empty)
