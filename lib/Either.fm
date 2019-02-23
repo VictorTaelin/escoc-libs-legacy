@@ -1,0 +1,9 @@
+Either
+: {A : (Typ A)}
+  {B : (Typ B)}
+  (Typ (Either A B))
+= [A] [B] [self]
+  {-Prop : {self : (Either A B self)} Type}
+  {left : {a : (A a)} (Prop (Either.left A B a))}
+  {right : {b : (B b)} (Prop (Either.right A B b))}
+  (Prop self)
