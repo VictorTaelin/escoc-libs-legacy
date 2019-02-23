@@ -1,0 +1,6 @@
+Dec.true
+: {A : (Typ A)}
+  {a : (A a)}
+  (Dec A (Dec.true A a))
+= [A] [a]
+  (Either.left A (Not A) a)

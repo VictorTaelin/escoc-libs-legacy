@@ -1,11 +1,11 @@
 Nat.eq_dec_zero
 : {b : (Nat b)}
-  (Either (Eq Nat Nat.zero b) (Not (Eq Nat Nat.zero b)) (Nat.eq_dec_zero b))
+  (Dec (Eq Nat Nat.zero b) (Nat.eq_dec_zero b))
 = [b]
   let motive [self]
-    (Either (Eq Nat Nat.zero self) (Not (Eq Nat Nat.zero self)) (Nat.eq_dec_zero self))
+    (Dec (Eq Nat Nat.zero self) (Nat.eq_dec_zero self))
   let case_succ [pred]
-    (Either.right (Eq Nat Nat.zero (Nat.succ pred)) (Not (Eq Nat Nat.zero (Nat.succ pred))) (Nat.zero_not_succ pred))
+    (Dec.false (Eq Nat Nat.zero (Nat.succ pred)) (Nat.zero_not_succ pred))
   let case_zero
-    (Either.left (Eq Nat Nat.zero Nat.zero) (Not (Eq Nat Nat.zero Nat.zero)) (Eq.refl Nat Nat.zero))
+    (Dec.true (Eq Nat Nat.zero Nat.zero) (Eq.refl Nat Nat.zero))
   (b -motive case_succ case_zero)

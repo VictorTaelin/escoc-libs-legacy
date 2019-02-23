@@ -1,0 +1,5 @@
+Dec
+: {A : (Typ A)} (Typ (Dec A))
+= [A]
+  (Either A (Not A))
+

@@ -1,0 +1,6 @@
+Dec.false
+: {A : (Typ A)}
+  {n : (Not A n)}
+  (Dec A (Dec.false A n))
+= [A] [n]
+  (Either.right A (Not A) n)

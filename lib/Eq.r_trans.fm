@@ -1,0 +1,12 @@
+// Transitivity of equality: a proof that `b == a` and `b == c` implies `a == c`
+Eq.r_trans
+: {T : {self : (T self)} Type}
+  {a : (T a)}
+  {b : (T b)}
+  {c : (T c)}
+  {e1 : (Eq T b a e1)}
+  {e2 : (Eq T b c e2)}
+  (Eq T a c (Eq.r_trans T a b c e1 e2))
+= [T] [a] [b] [c] [e1]
+  (e1 [a] [self] {e2 : (Eq T b c e2)} (Eq T a c (Eq.r_trans T a b c self e2))
+    [e2] e2)
