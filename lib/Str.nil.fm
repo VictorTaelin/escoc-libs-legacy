@@ -1,0 +1,4 @@
+Str.nil
+: (Str Str.nil)
+= [-Prop] [cons] [nil]
+  nil

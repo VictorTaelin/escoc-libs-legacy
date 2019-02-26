@@ -1,0 +1,3 @@
+IO.PUT_LINE
+: (Bin IO.PUT_LINE)
+= (Bin.I Bin.E)

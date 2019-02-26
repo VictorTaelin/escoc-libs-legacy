@@ -1,0 +1,5 @@
+IO.example.echo
+: (IO IO.example.echo)
+= (IO.ask IO.GET_LINE Bin.E [line : (Bin line)] 
+  (IO.ask IO.PUT_LINE line [_ : (Bin _)]
+  IO.end))

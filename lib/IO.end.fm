@@ -1,0 +1,3 @@
+IO.end
+: (IO IO.end)
+= [-Prop] [ask] [end] end

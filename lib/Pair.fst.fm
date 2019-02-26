@@ -1,0 +1,7 @@
+Pair.fst
+: {-A   : (Typ A)}
+  {-B   : (Typ B)}
+  {pair : (Pair A B pair)}
+  (A (Pair.fst -A -B pair))
+= [-A] [-B] [pair]
+  (pair -[self] (A (Pair.fst -A -B self)) [a] [b] a)

@@ -1,0 +1,11 @@
+IO
+: (Typ IO) 
+= [self]
+  {-Prop : (Typ IO)}
+  {ask :
+    {cmd : (Str cmd)}
+    {arg : (Str arg)}
+    {cnt : {res : (Str res)} (IO (cnt res))}
+    (Prop (IO.ask cmd arg cnt))}
+  {end : (Prop IO.end)}
+  (Prop self)

@@ -1,0 +1,5 @@
+Bin.I
+: {pred : (Bin pred)}
+  (Bin (Bin.I pred))
+= [pred] [-Prop] [O] [I] [E]
+  (I pred)

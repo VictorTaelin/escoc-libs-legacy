@@ -1,0 +1,10 @@
+// Binary
+
+Bin
+: (Typ Bin)
+= [self]
+  {-Prop : (Typ Bin)}
+  {O     : {pred : (Bin pred)} (Prop (Bin.O pred))}
+  {I     : {pred : (Bin pred)} (Prop (Bin.I pred))}
+  {E     : (Prop Bin.E)}
+  (Prop self)

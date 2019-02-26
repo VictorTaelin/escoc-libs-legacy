@@ -1,0 +1,4 @@
+Bin.E
+: (Bin Bin.E)
+= [-Prop] [O] [I] [E]
+  E

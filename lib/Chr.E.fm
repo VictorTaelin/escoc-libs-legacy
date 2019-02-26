@@ -1,0 +1,4 @@
+Chr.E
+: (Chr Chr.E)
+= [-Prop] [O] [I] [E]
+  E

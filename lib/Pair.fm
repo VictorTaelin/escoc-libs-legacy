@@ -1,0 +1,10 @@
+// Pairs
+
+Pair
+: {A : (Typ A)}
+  {B : (Typ B)}
+  (Typ (Pair A B))
+= [A] [B] [self]
+  {-Prop : (Typ (Pair A B))}
+  {new   : {a : (A a)} {b : (B b)} (Prop (Pair.new -A -B a b))}
+  (Prop self)

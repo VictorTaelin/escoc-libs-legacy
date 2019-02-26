@@ -1,0 +1,7 @@
+Pair.snd
+: {-A   : (Typ A)}
+  {-B   : (Typ B)}
+  {pair : (Pair A B pair)}
+  (B (Pair.snd -A -B pair))
+= [-A] [-B] [pair]
+  (pair -[self] (B (Pair.snd -A -B self)) [a] [b] b)

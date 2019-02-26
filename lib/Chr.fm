@@ -1,0 +1,8 @@
+Chr
+: (Typ Chr)
+= [self]
+  {-Prop : (Typ Chr)}
+  {O     : {pred : (Chr pred)} (Prop (Chr.O pred))}
+  {I     : {pred : (Chr pred)} (Prop (Chr.I pred))}
+  {E     : (Prop Chr.E)}
+  (Prop self)

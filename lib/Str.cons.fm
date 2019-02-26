@@ -1,0 +1,6 @@
+Str.cons
+: {head : (Chr head)}
+  {tail : (Str tail)}
+  (Str (Str.cons head tail))
+= [head] [tail] [-Prop] [cons] [nil]
+  (cons head tail)

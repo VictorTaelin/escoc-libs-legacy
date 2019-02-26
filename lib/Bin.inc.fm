@@ -1,0 +1,7 @@
+Bin.inc
+: {x : (Bin x)}
+  (Bin (Bin.inc x))
+= [xs] (xs -[self : (Bin self)] (Bin (Bin.inc self))
+  [pred] (Bin.I pred)
+  [pred] (Bin.O (Bin.inc pred))
+  Bin.E)

@@ -1,0 +1,17 @@
+Bin.equals
+: {x : (Bin x)}
+  {y : (Bin y)}
+  (Bool (Bin.equals x y))
+= [x] (x -[x] {y : (Bin y)} (Bool (Bin.equals x y))
+  [xp] [y] (y -[y](Bool (Bin.equals (Bin.O xp) y))
+    [yp] (Bin.equals xp yp)
+    [yp] Bool.false
+    Bool.false)
+  [xp] [y] (y -[y](Bool (Bin.equals (Bin.I xp) y))
+    [yp] Bool.false
+    [yp] (Bin.equals xp yp)
+    Bool.false)
+  [y] (y -[y](Bool (Bin.equals Bin.E y))
+    [yp] Bool.false
+    [yp] Bool.false
+    Bool.true))

@@ -1,0 +1,7 @@
+IO.ask
+: {cmd : (Str cmd)}
+  {arg : (Str arg)}
+  {cnt : {res : (Str res)} (IO (cnt res))}
+  (IO (IO.ask cmd arg cnt))
+= [cmd] [arg] [cnt] [-Prop] [ask] [end]
+  (ask cmd arg cnt)

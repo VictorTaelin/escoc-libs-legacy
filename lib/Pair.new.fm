@@ -1,0 +1,7 @@
+Pair.new
+: {-A : (Typ A)}
+  {-B : (Typ B)}
+  {a  : (A a)}
+  {b  : (B b)}
+  (Pair A B (Pair.new -A -B a b))
+= [-A] [-B] [a] [b] [-Prop] [new] (new a b)

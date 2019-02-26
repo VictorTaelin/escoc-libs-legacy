@@ -1,0 +1,3 @@
+IO.GET_LINE
+: (Bin IO.GET_LINE)
+= (Bin.O Bin.E)

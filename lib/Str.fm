@@ -1,0 +1,7 @@
+Str
+: (Typ Str)
+= [self]
+  {-Prop : (Typ Str)}
+  {cons  : {head : (Chr head)} {tail : (Str tail)} (Prop (Str.cons head tail))}
+  {nil   : (Prop Str.nil)}
+  (Prop self)

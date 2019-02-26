@@ -1,0 +1,5 @@
+Chr.I
+: {pred : (Chr pred)}
+  (Chr (Chr.I pred))
+= [pred] [-Prop] [O] [I] [E]
+  (I pred)
