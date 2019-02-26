@@ -1,0 +1,6 @@
+Str.concat
+: {a : (Str a)} {b : (Str b)} (Str (Str.concat a b))
+= [a] [b] (a
+  -[s : (Str s)] (Str (Str.concat s b))
+  [c : (Chr c)] [cs : (Str cs)] (Str.cons c (Str.concat cs b))
+  b)
