@@ -1,0 +1,19 @@
+{
+  "name": "formality-stdlib",
+  "version": "0.1.1",
+  "description": "",
+  "main": "formality-stdlib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonad/formality-stdlib.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moonad/formality-stdlib/issues"
+  },
+  "homepage": "https://github.com/moonad/formality-stdlib#readme"
+}
