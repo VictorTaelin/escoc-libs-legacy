@@ -1,6 +1,5 @@
-// Natural numbers (Church)
-
 Cat
+| Church-encoded natural numbers.
 : (Typ Cat)
 = [self]
   {-P : (Typ P)}

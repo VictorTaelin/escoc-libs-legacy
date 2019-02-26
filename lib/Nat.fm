@@ -1,6 +1,5 @@
-// Natural numbers (Scott)
-
 Nat
+| A Scott-encoded natural number.
 : (Typ Nat)
 = [self]
   {-Prop : (Typ Nat)}

@@ -1,6 +1,5 @@
-// The booleans true and false
-
 Bool
+| The booleans true and false
 : (Typ Bool)
 = [self]
   {-Prop : (Typ Bool)}

@@ -1,6 +1,5 @@
-// The empty, uninhabited type
-
 Empty
+| The empty, uninhabited type.
 : (Typ Empty)
 = [self]
   {-Prop : (Typ Empty)}

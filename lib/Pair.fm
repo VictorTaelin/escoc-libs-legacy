@@ -1,6 +1,5 @@
-// Pairs
-
 Pair
+| A simple pair.
 : {A : (Typ A)}
   {B : (Typ B)}
   (Typ (Pair A B))

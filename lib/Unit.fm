@@ -1,6 +1,5 @@
-// The unit type
-
 Unit
+| The unit type.
 : (Typ Unit)
 = [self]
   {-Prop : (Typ Unit)}

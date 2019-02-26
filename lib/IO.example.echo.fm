@@ -1,5 +1,0 @@
-IO.example.echo
-: (IO IO.example.echo)
-= (IO.ask "GET_LINE" "" [line : (Bin line)] 
-  (IO.ask "PUT_LINE" line [_ : (Bin _)]
-  IO.end))

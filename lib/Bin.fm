@@ -1,6 +1,5 @@
-// Binary
-
 Bin
+| A binary number.
 : (Typ Bin)
 = [self]
   {-Prop : (Typ Bin)}

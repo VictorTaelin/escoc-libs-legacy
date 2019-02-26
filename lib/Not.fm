@@ -1,4 +1,4 @@
-// Proof that a self-referential type is uninhabited, `Not = λP. P -> Empty`
 Not
+| Proof that a self-referential type is uninhabited, `Not = λP. P -> Empty`.
 : {P : (Typ P)} (Typ (Not P))
 = [P] (All P [x : (P x)] Empty)

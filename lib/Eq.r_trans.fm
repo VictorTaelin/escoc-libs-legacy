@@ -1,5 +1,5 @@
-// Transitivity of equality: a proof that `b == a` and `b == c` implies `a == c`
 Eq.r_trans
+| Transitivity of equality: a proof that `b == a` and `b == c` implies `a == c`.
 : {T : {self : (T self)} Type}
   {a : (T a)}
   {b : (T b)}

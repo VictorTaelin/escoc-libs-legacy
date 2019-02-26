@@ -1,5 +1,4 @@
-// Self-referential identity
-
 the
+| Self-referential identity.
 : {A : (Typ A)} {u : (A u)} (A (the A u))
 = [A] [u] u

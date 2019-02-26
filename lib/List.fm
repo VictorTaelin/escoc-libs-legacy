@@ -1,6 +1,5 @@
-// Lists
-
 List
+| A polymorphic linked list.
 : {A : (Typ A)}
   (Typ (List A))
 = [A] [self]

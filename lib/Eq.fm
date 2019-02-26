@@ -1,6 +1,5 @@
-// Equality
-
 Eq
+| Propositional equality.
 : {T    : (Typ T)}
   {a    : (T a)}
   {b    : (T b)}

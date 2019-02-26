@@ -1,4 +1,0 @@
-IO.example.greet
-= (IO.ask "GET_LINE" "What is your name?" [name : (Str name)] 
-  (IO.ask "PUT_LINE" (Str.concat "Hello, " name) [_ : (Str _)]
-  IO.end))
