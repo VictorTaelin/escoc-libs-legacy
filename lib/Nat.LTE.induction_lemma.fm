@@ -1,0 +1,26 @@
+Nat.LTE.induction_lemma
+: {Prop : {x : (Nat x)} Type}
+  {base : (Prop Nat.zero)}
+  {step :
+    {n : (Nat n)}
+    {ih : {m : (Nat m)} {lte : (Nat.LTE m n lte)} (Prop m)}
+    (Prop (Nat.succ n))}
+  {n : (Nat n)}
+  {m : (Nat m)}
+  {lte : (Nat.LTE m n lte)}
+  (Prop m)
+= [Prop] [base] [step] [n]
+  let motive [n]
+    {m : (Nat m)} {lte : (Nat.LTE m n lte)} (Prop m)
+  let case_zero [m] [lte]
+    let e (Eq.sym Nat m Nat.zero (Nat.LTE.bot2 m lte))
+    (Eq.subst2 Nat Nat.zero m e Prop base)
+  let case_succ [n] [m] [lte]
+    let rec (Nat.LTE.induction_lemma Prop base step n)
+    let p (Nat.LTE.nonstrict_to_strict m (Nat.succ n) lte)
+    let motive_either [self] (Prop m)
+    let case_left [lt] (rec m (Nat.LTE.succ_strict m n lt))
+    let case_right [e] (Eq.subst2 Nat (Nat.succ n) m
+      (Eq.sym Nat m (Nat.succ n) e) Prop (step n rec))
+    (p -motive_either case_left case_right)
+  (n -motive case_succ case_zero)

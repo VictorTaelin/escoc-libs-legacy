@@ -1,0 +1,7 @@
+Nat.LTE.nonstrict_to_strict
+: {a : (Nat a)} {b : (Nat b)} {p : (Nat.LTE a b p)}
+  (Either (Nat.LT a b) (Eq Nat a b) (Nat.LTE.nonstrict_to_strict a b p))
+= [a] [b] [p]
+  let x (Nat.LTE.fst a b p)
+  let e (Nat.LTE.snd a b p)
+  (Nat.LTE.nonstrict_to_strict_lemma a b x e)

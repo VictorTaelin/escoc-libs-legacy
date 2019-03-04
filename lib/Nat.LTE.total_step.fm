@@ -1,0 +1,11 @@
+Nat.LTE.total_step
+: {a : (Nat a)} {b : (Nat b)} {e : (Either (Nat.LTE a b) (Nat.LTE b a) e)}
+  (Either (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE (Nat.succ b) (Nat.succ a)) (Nat.LTE.total_step a b e))
+= [a] [b] [e]
+  let motive_either [self]
+    (Either (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE (Nat.succ b) (Nat.succ a)) (Nat.LTE.total_step a b self))
+  let left [p : (Nat.LTE a b p)]
+    (Either.left (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE (Nat.succ b) (Nat.succ a)) (Nat.LTE.succ_monotone a b p))
+  let right [p : (Nat.LTE b a p)]
+    (Either.right (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE (Nat.succ b) (Nat.succ a)) (Nat.LTE.succ_monotone b a p))
+  (e -motive_either left right)

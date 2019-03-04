@@ -1,0 +1,14 @@
+Nat.LTE.dec
+: {a : (Nat a)} {b : (Nat b)}
+  (Dec (Nat.LTE a b) (Nat.LTE.dec a b))
+= [a]
+  let motive [self] {b : (Nat b)}
+    (Dec (Nat.LTE self b) (Nat.LTE.dec self b))
+  let case_zero [b] (Dec.true (Nat.LTE Nat.zero b) (Nat.LTE.bot1 b))
+  let case_succ [a] [b]
+    let motive_b [b]
+      (Dec (Nat.LTE (Nat.succ a) b) (Nat.LTE.dec (Nat.succ a) b))
+    let case_zero_b (Dec.false (Nat.LTE (Nat.succ a) Nat.zero) (Nat.LTE.succ_not_lte_zero a))
+    let case_succ_b [b] (Nat.LTE.dec_step a b (Nat.LTE.dec a b))
+    (b -motive_b case_succ_b case_zero_b)
+  (a -motive case_succ case_zero)

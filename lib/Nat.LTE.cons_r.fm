@@ -1,0 +1,4 @@
+Nat.LTE.cons_r
+: {a : (Nat a)} {b : (Nat b)} {x : (Nat x)} {e : (Eq Nat (Nat.add x a) b e)} (Nat.LTE a b (Nat.LTE.cons_r a b x e))
+= [a] [b] [x] [e]
+  (Sigma.new Nat [x : (Nat x)] (Eq Nat (Nat.add a x) b) x (Eq.trans Nat (Nat.add a x) (Nat.add x a) b (Nat.add_comm a x) e))

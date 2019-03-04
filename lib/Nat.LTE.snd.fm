@@ -1,0 +1,4 @@
+Nat.LTE.snd
+: {a : (Nat a)} {b : (Nat b)} {p : (Nat.LTE a b p)} (Eq Nat (Nat.add a (Nat.LTE.fst a b p)) b (Nat.LTE.snd a b p))
+= [a] [b] [p]
+  (Sigma.snd Nat [x : (Nat x)] (Eq Nat (Nat.add a x) b) p)

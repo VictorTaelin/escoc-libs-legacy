@@ -1,0 +1,12 @@
+Nat.LTE.dec_step
+: {a : (Nat a)} {b : (Nat b)} {e : (Dec (Nat.LTE a b) e)}
+  (Dec (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE.dec_step a b e))
+= [a] [b] [e]
+  let motive_dec [self]
+    (Dec (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE.dec_step a b self))
+  let case_true [p : (Nat.LTE a b p)]
+    (Dec.true (Nat.LTE (Nat.succ a) (Nat.succ b)) (Nat.LTE.succ_monotone a b p))
+  let case_false [n : (Not (Nat.LTE a b) n)] 
+    (Dec.false (Nat.LTE (Nat.succ a) (Nat.succ b))
+      [p : (Nat.LTE (Nat.succ a) (Nat.succ b) p)] (n (Nat.LTE.succ_strict a b p)))
+  (e -motive_dec case_true case_false)

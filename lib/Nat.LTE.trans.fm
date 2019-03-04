@@ -1,0 +1,13 @@
+Nat.LTE.trans
+: {a : (Nat a)} {b : (Nat b)} {c : (Nat c)} {p1 : (Nat.LTE a b p1)} {p2 : (Nat.LTE b c p2)} (Nat.LTE a c (Nat.LTE.trans a b c p1 p2))
+= [a] [b] [c] [p1] [p2]
+  let x1 (Nat.LTE.fst a b p1)
+  let x2 (Nat.LTE.fst b c p2)
+  let e1 (Nat.LTE.snd a b p1)
+  let e2 (Nat.LTE.snd b c p2)
+  let e3
+    (Eq.trans Nat (Nat.add a (Nat.add x1 x2)) (Nat.add (Nat.add a x1) x2) c
+      (Nat.add_assoc_r a x1 x2)
+      (Eq.trans Nat
+        (Nat.add (Nat.add a x1) x2) (Nat.add b x2) c (Eq.cong Nat Nat (Nat.add a x1) b e1 [x : (Nat x)] (Nat.add x x2)) e2))
+  (Nat.LTE.cons a c (Nat.add x1 x2) e3)

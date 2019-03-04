@@ -1,0 +1,9 @@
+// Conjunction
+And
+: {A : (Typ A)}
+  {B : (Typ B)}
+  (Typ (And A B))
+= [A] [B] [self]
+  {-Prop : {self : (And A B self)} Type}
+  {pair : {a : (A a)} {b : (B b)} (Prop (And.pair A B a b))}
+  (Prop self)

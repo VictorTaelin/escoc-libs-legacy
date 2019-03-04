@@ -1,0 +1,3 @@
+Nat.LTE.bot1
+: {a : (Nat a)} (Nat.LTE Nat.zero a (Nat.LTE.bot1 a))
+= [a] (Nat.LTE.cons Nat.zero a a (Eq.refl Nat a))

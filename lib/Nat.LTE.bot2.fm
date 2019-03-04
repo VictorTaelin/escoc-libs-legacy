@@ -1,0 +1,4 @@
+Nat.LTE.bot2
+: {a : (Nat a)} {p : (Nat.LTE a Nat.zero p)} (Eq Nat a Nat.zero (Nat.LTE.bot2 a p))
+= [a] [p]
+  (Nat.LTE.anti_sym a Nat.zero p (Nat.LTE.bot1 a))

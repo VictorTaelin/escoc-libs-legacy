@@ -1,0 +1,3 @@
+Nat.LTE.succ_not_lte_zero
+: {a : (Nat a)} (Not (Nat.LTE (Nat.succ a) Nat.zero) (Nat.LTE.succ_not_lte_zero a))
+= [a] [p] (Nat.succ_not_zero a (Nat.LTE.bot2 (Nat.succ a) p))

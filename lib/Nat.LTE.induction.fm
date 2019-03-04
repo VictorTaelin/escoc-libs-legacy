@@ -1,0 +1,12 @@
+// Proving P(0) and Forall n, (Forall m<=n, P(m)) -> P(succ n) we can conclude Forall n, P(n)
+Nat.LTE.induction
+: {Prop : {x : (Nat x)} Type}
+  {base : (Prop Nat.zero)}
+  {step :
+    {n : (Nat n)}
+    {ih : {m : (Nat m)} {lte : (Nat.LTE m n lte)} (Prop m)}
+    (Prop (Nat.succ n))}
+  {n : (Nat n)}
+  (Prop n)
+= [Prop] [base] [step] [n]
+  (Nat.LTE.induction_lemma Prop base step n n (Nat.LTE.cons_r n n Nat.zero (Eq.refl Nat n)))

@@ -1,0 +1,8 @@
+And.pair
+: {A : (Typ A)}
+  {B : (Typ B)}
+  {a : (A a)}
+  {b : (B b)}
+  (And A B (And.pair A B a b))
+= [A] [B] [a] [b] [-Prop] [pair]
+  (pair a b)

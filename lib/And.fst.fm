@@ -1,0 +1,9 @@
+And.fst
+: {A : (Typ A)}
+  {B : (Typ B)}
+  {pair : (And A B pair)}
+  (A (And.fst A B pair))
+= [A] [B] [pair]
+  (pair
+    -[self] (A (And.fst A B self))
+    [a] [b] a)

@@ -1,0 +1,8 @@
+Nat.either_zero_or_succ
+: {a : (Nat a)}
+  (Either (Eq Nat a Nat.zero) (Eq Nat a (Nat.succ (Nat.pred a))) (Nat.either_zero_or_succ a))
+= [a]
+  let motive [a : (Nat a)] (Either (Eq Nat a Nat.zero) (Eq Nat a (Nat.succ (Nat.pred a))) (Nat.either_zero_or_succ a))
+  let case_zero (Either.left (Eq Nat Nat.zero Nat.zero) (Eq Nat Nat.zero (Nat.succ (Nat.pred Nat.zero))) (Eq.refl Nat Nat.zero))
+  let case_succ [a] (Either.right (Eq Nat (Nat.succ a) Nat.zero) (Eq Nat (Nat.succ a) (Nat.succ (Nat.pred (Nat.succ a)))) (Eq.refl Nat (Nat.succ (Nat.pred (Nat.succ a)))))
+  (a -motive case_succ case_zero)

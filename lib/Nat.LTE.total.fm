@@ -1,0 +1,14 @@
+Nat.LTE.total
+: {a : (Nat a)} {b : (Nat b)}
+  (Either (Nat.LTE a b) (Nat.LTE b a) (Nat.LTE.total a b))
+= [a]
+  let motive [self] {b : (Nat b)}
+    (Either (Nat.LTE self b) (Nat.LTE b self) (Nat.LTE.total self b))
+  let case_zero [b] (Either.left (Nat.LTE Nat.zero b) (Nat.LTE b Nat.zero) (Nat.LTE.bot1 b))
+  let case_succ [a] [b]
+    let motive_b [b]
+      (Either (Nat.LTE (Nat.succ a) b) (Nat.LTE b (Nat.succ a)) (Nat.LTE.total (Nat.succ a) b))
+    let case_zero_b (Either.right (Nat.LTE (Nat.succ a) Nat.zero) (Nat.LTE Nat.zero (Nat.succ a)) (Nat.LTE.bot1 (Nat.succ a)))
+    let case_succ_b [b] (Nat.LTE.total_step a b (Nat.LTE.total a b))
+    (b -motive_b case_succ_b case_zero_b)
+  (a -motive case_succ case_zero)

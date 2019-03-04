@@ -1,0 +1,9 @@
+And.snd
+: {A : (Typ A)}
+  {B : (Typ B)}
+  {pair : (And A B pair)}
+  (B (And.snd A B pair))
+= [A] [B] [pair]
+  (pair
+    -[self] (B (And.snd A B self))
+    [a] [b] b)

@@ -1,0 +1,15 @@
+Nat.LTE.nonstrict_to_strict_lemma
+: {a : (Nat a)} {b : (Nat b)} {x : (Nat x)} {e : (Eq Nat (Nat.add a x) b e)}
+  (Either (Nat.LT a b) (Eq Nat a b) (Nat.LTE.nonstrict_to_strict_lemma a b x e))
+= [a] [b] [x]
+  let motive [x] {e : (Eq Nat (Nat.add a x) b e)}
+    (Either (Nat.LT a b) (Eq Nat a b) (Nat.LTE.nonstrict_to_strict_lemma a b x e))
+  let case_zero [e]
+    (Either.right (Nat.LT a b) (Eq Nat a b)
+      (Eq.r_trans Nat a (Nat.add a Nat.zero) b (Nat.add_zero_r a) e))
+  let case_succ [x] [e]
+    (Either.left (Nat.LT a b) (Eq Nat a b)
+      (Nat.LTE.cons (Nat.succ a) b x
+        (Eq.r_trans Nat (Nat.add (Nat.succ a) x) (Nat.add a (Nat.succ x)) b (Nat.add_succ_r a x) e)))
+  (x -motive case_succ case_zero)
+
