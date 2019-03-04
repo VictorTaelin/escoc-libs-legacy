@@ -1,4 +1,0 @@
-Nat.LT.cons
-: {a : (Nat a)} {b : (Nat b)} {x : (Nat x)} {e : (Eq Nat (Nat.add a x) b e)} (Nat.LT a b (Nat.LT.cons a b x e))
-= [a] [b] [x] [e]
-  (Sigma.new Nat [x : (Nat x)] (Eq Nat (Nat.add a x) b) x e)

@@ -1,3 +1,0 @@
-Nat.LT.reflx
-: {a : (Nat a)} (Nat.LT a a (Nat.LT.reflx a))
-= [a] (Nat.LT.cons a a Nat.zero (Nat.add_zero_r a))

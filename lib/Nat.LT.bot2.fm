@@ -1,4 +1,0 @@
-Nat.LT.bot2
-: {a : (Nat a)} {p : (Nat.LT a Nat.zero p)} (Eq Nat a Nat.zero (Nat.LT.bot2 a p))
-= [a] [p]
-  (Nat.LT.anti_sym a Nat.zero p (Nat.LT.bot1 a))
